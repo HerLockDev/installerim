@@ -3,7 +3,7 @@ from time import time
 import random
 import requests
 from git import Repo
-from neon_installer import *
+from nitro_installer import *
 from .astring import main
 import os
 #from neonconfig import REPO_URL, REPO_BRANCH, DESTINATION
@@ -28,7 +28,7 @@ def connect (api):
     return heroku_conn
 
 def createApp (connect):
-    appname = "neonuserbot" + str(time() * 1000)[-4:].replace(".", "") + str(random.randint(0,500))
+    appname = "nitrouserbot" + str(time() * 1000)[-4:].replace(".", "") + str(random.randint(0,500))
     try:
         connect.create_app(name=appname, stack_id_or_name='container', region_id_or_name="eu")
     except requests.exceptions.HTTPError:
